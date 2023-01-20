@@ -1,0 +1,3 @@
+[submodule "cairopen_contracts"]
+	path = lib/cairopen_contracts
+	url = https://github.com/CairOpen/cairopen-contracts
