@@ -1,0 +1,14 @@
+[project]
+protostar-version = "0.9.1"
+lib-path = "lib"
+
+cairo-path = [
+    "./lib/carbonable_contracts/src",
+    "./lib/cairo_contracts/src",
+    "./lib/cairopen_contracts/src",
+    "src",
+]
+
+[contracts]
+ERC3525MetadataOnchain = ["./src/ERC3525MetadataOnchain.cairo"]
+ERC3525MetadataDescriptor = ["./src/periphery/ERC3525MetadataDescriptor.cairo"]
