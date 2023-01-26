@@ -1,8 +1,9 @@
 # Generating ERC3525-compatible On-chain Metadata
 
-## Summary
-Starknet compute is cheap enough to be able to generate complex Metadata on-chain.
-This project displays on-chain attributes via the periphery interface IERC3525MetadataDescriptor.
+## About
+The purpose is to displays on-chain attributes via the periphery interface IERC3525MetadataDescriptor.
+Starknet L2 compute is cheap enough to be able to generate complex Metadata on-chain.
+
 
 ## To-do:
 - Metadata interfaces
