@@ -2,6 +2,7 @@
 
 ## About
 The purpose is to displays on-chain attributes via the periphery interface IERC3525MetadataDescriptor.
+
 Starknet L2 compute is cheap enough to be able to generate complex Metadata on-chain.
 
 
