@@ -9,3 +9,6 @@
 [submodule "cairopen_contracts"]
 	path = lib/cairopen_contracts
 	url = https://github.com/CairOpen/cairopen-contracts
+[submodule "cairo_erc_3525"]
+	path = lib/cairo_erc_3525
+	url = https://github.com/carbonable-labs/cairo-erc-3525
