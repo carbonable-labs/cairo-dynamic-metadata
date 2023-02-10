@@ -1,7 +1,3 @@
-[submodule "carbonable_contracts"]
-	path = lib/carbonable_contracts
-	url = https://github.com/Carbonable/carbonable-contracts
-
 [submodule "cairo_contracts"]
 	path = lib/cairo_contracts
 	url = https://github.com/OpenZeppelin/cairo-contracts
