@@ -9,7 +9,7 @@ from cairopen.string.ASCII import StringCodec
 from cairopen.string.string import String
 from cairopen.string.utils import StringUtil
 
-from carbonable.erc3525.IERC3525Full import IERC3525Full as IERC3525
+from erc3525.IERC3525Full import IERC3525Full as IERC3525
 
 namespace ERC3525MetadataDescriptor {
     func constructContractURI{
@@ -17,7 +17,7 @@ namespace ERC3525MetadataDescriptor {
         pedersen_ptr: HashBuiltin*,
         bitwise_ptr: BitwiseBuiltin*,
         range_check_ptr,
-        instance
+        instance,
     }() -> (uri_len: felt, uri: felt*) {
         alloc_locals;
 

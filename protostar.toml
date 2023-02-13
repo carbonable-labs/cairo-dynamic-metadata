@@ -3,7 +3,7 @@ protostar-version = "0.9.1"
 lib-path = "lib"
 
 cairo-path = [
-    "./lib/carbonable_contracts/src",
+    "./lib/cairo_erc_3525/src",
     "./lib/cairo_contracts/src",
     "./lib/cairopen_contracts/src",
     "src",
