@@ -6,12 +6,12 @@ from starkware.cairo.common.uint256 import Uint256
 
 @contract_interface
 namespace IERC3525MetadataDescriptor {
-    func constructContractURI() -> (contractURI: felt*) {
+    func constructContractURI() -> (uri_len: felt, uri: felt*) {
     }
 
-    func constructSlotURI(slot: Uint256) -> (slotURI: felt*) {
+    func constructSlotURI(slot: Uint256) -> (uri_len: felt, uri: felt*) {
     }
 
-    func constructTokenURI(tokenId: Uint256) -> (tokenURI: felt*) {
+    func constructTokenURI(tokenId: Uint256) -> (uri_len: felt, uri: felt*) {
     }
 }
