@@ -91,9 +91,9 @@ namespace ERC3525MetadataDescriptor {
         let (str) = StringUtil.concat(str, name_str);
         let (str) = append_ss(str, ',"description":');
         let (str) = StringUtil.concat(str, desc_str);
-        let (str) = append_ss(str, ',"image":');
+        let (str) = append_ss(str, ',"image_data":"');
         let (str) = StringUtil.concat(str, img_str);
-        let (str) = append_ss(str, ',"slot":');
+        let (str) = append_ss(str, '","slot":');
         let (str) = StringUtil.concat(str, slot_str);
         let (str) = append_ss(str, ',"value":');
         let (str) = StringUtil.concat(str, value_str);
@@ -219,7 +219,32 @@ namespace ERC3525MetadataDescriptor {
         range_check_ptr,
         instance,
     }(tokenId: Uint256) -> (uri: String) {
-        let (str) = StringCodec.ss_to_string('"dummy token image"');
+        // let (str) = StringCodec.read('token_uri');
+        alloc_locals;
+        let (value) = IERC3525.valueOf(instance, tokenId);
+        let (local value_str) = StringCodec.felt_to_string(value.low);
+
+        let (str) = StringCodec.ss_to_string('data:image/svg+xml,<?xml versio');
+        let (str) = append_ss(str, 'n=\"1.0\" encoding=\"UTF-8\" ?>');
+        let (str) = append_ss(str, '<svg width=\"300\" height=\"300');
+        let (str) = append_ss(str, '\" xmlns=\"http://www.w3.org/20');
+        let (str) = append_ss(str, '00/svg\"><image href=\"https://');
+        let (str) = append_ss(str, 'bafybeibbweymszo4mjlkvxdoyieeq4');
+        let (str) = append_ss(str, 'svl4k2orovwi5nyybjwqvmfqdczy.ip');
+        let (str) = append_ss(str, 'fs.dweb.link/002.jpg\" width=\"');
+        let (str) = append_ss(str, '100%\" height=\"100%\"/><rect x');
+        let (str) = append_ss(str, '=\"15\" y=\"20\" width=\"110\" ');
+        let (str) = append_ss(str, 'height=\"25\" rx=\"5\" ry=\"5\"');
+        let (str) = append_ss(str, ' stroke=\"black\" fill=\"yellow');
+        let (str) = append_ss(str, '\" stroke-width=\"2\" fill-opac');
+        let (str) = append_ss(str, 'ity=\"0.8\"/><text x=\"20\" y=\');
+        let (str) = append_ss(str, '"37\"><tspan fill=\"blue\" font');
+        let (str) = append_ss(str, '-weight=\"bold\">Value</tspan><');
+        let (str) = append_ss(str, 'tspan dx=\"10\" fill=\"darkblue');
+        let (str) = append_ss(str, '\">');
+        let (str) = StringUtil.concat(str, value_str);
+        let (str) = append_ss(str, ' sq.m</tspan></text></svg>');
+
         return (uri=str);
     }
 
