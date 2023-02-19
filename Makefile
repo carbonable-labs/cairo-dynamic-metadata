@@ -5,6 +5,7 @@ build:
 
 install:
 	protostar install
+	protostar update
 
 test:
 	protostar test tests/
