@@ -11,4 +11,3 @@ cairo-path = [
 
 [contracts]
 ERC3525MetadataOnchain = ["./src/ERC3525MetadataOnchain.cairo"]
-ERC3525MetadataDescriptor = ["./src/periphery/ERC3525MetadataDescriptor.cairo"]
