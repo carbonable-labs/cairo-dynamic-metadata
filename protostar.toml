@@ -10,4 +10,5 @@ cairo-path = [
 ]
 
 [contracts]
-ERC3525MetadataOnchain = ["./src/ERC3525MetadataOnchain.cairo"]
+ERC3525MetadataOnchain = ["./src/metadata/examples/ERC3525MetadataOnchain.cairo"]
+ERC3525MetadataOffchain = ["./src/metadata/examples/ERC3525MetadataOffchain.cairo"]
