@@ -27,7 +27,7 @@ const DECIMALS = 18;
 @external
 func __setup__() {
     %{
-        context.erc3525_contract = deploy_contract("./src/metadata/examples/ERC3525MetadataOnchain.cairo", 
+        context.erc3525_contract = deploy_contract("./src/metadata/presets/ERC3525MetadataOnchain.cairo", 
             [ids.NAME, ids.SYMBOL, ids.DECIMALS]).contract_address
     %}
     return ();

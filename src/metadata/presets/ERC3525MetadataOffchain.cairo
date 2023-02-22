@@ -19,7 +19,7 @@ from erc3525.extensions.slotenumerable.library import (
     ERC3525SlotEnumerable,
     _add_token_to_slot_enumeration,
 )
-from metadata.presets.metadata_example import ERC3525MetadataDescriptor
+from metadata.libs.carbonable_meta_offchain import ERC3525MetadataDescriptor
 
 //
 // Constructor
