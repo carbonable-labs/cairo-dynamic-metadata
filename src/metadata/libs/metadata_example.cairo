@@ -11,6 +11,8 @@ from cairopen.string.utils import StringUtil
 
 from erc3525.IERC3525Full import IERC3525Full as IERC3525
 
+from metadata.utils.library import append_ss
+
 namespace ERC3525MetadataDescriptor {
     func constructContractURI{
         syscall_ptr: felt*,
@@ -264,13 +266,4 @@ namespace ERC3525MetadataDescriptor {
         let (str) = append_ss(str, '}]');
         return (uri=str);
     }
-}
-
-func append_ss{bitwise_ptr: BitwiseBuiltin*, range_check_ptr}(str: String, s: felt) -> (
-    str: String
-) {
-    alloc_locals;
-    let (tmp_str) = StringCodec.ss_to_string(s);
-    let (res) = StringUtil.concat(str, tmp_str);
-    return (str=res);
 }

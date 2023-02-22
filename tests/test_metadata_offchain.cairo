@@ -27,7 +27,7 @@ const DECIMALS = 18;
 @external
 func __setup__() {
     %{
-        context.erc3525_contract = deploy_contract("./src/ERC3525MetadataOnchain.cairo", 
+        context.erc3525_contract = deploy_contract("./src/metadata/presets/ERC3525MetadataOffchain.cairo", 
             [ids.NAME, ids.SYMBOL, ids.DECIMALS]).contract_address
     %}
     return ();
@@ -53,13 +53,17 @@ func test_initialized_metadata{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, r
         import json
         uri = [memory[ids.uri + i] for i in range(ids.uri_len)]
         data = "".join(map(chr,uri))
-        data = data.split("json,")
-        assert len(data) == 2
-        data = data[1]
-        json_data = json.loads(data)
-        image_data = json_data['image_data'].split("xml,")[1]
-        assert image_data[:5] == '<?xml'
-        assert image_data[-6:] == '</svg>'
+        print(data)
+        assert data == "https://dev-carbonable-metadata.fly.dev/collection/1/token?value=42&decimals=18"
+    %}
+
+    let (uri_len, uri) = IERC3525.contractURI(erc3525_contract);
+    %{
+        import json
+        uri = [memory[ids.uri + i] for i in range(ids.uri_len)]
+        data = "".join(map(chr,uri))
+        print(data)
+        assert data == "https://dev-carbonable-metadata.fly.dev/collection/1"
     %}
     return ();
 }
