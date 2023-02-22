@@ -134,7 +134,7 @@ namespace ERC3525MetadataDescriptor {
         bitwise_ptr: BitwiseBuiltin*,
         range_check_ptr,
         instance,
-    }(slot: Uint256) -> (uri: y) {
+    }(slot: Uint256) -> (uri: String) {
         let (str) = StringCodec.ss_to_string('"dummy slot name"');
         return (uri=str);
     }
